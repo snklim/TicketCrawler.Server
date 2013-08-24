@@ -26,6 +26,12 @@ namespace TicketCrawler.Worker.TicketCrawlerServer {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ITicketCrawlerServer/MakeRequest")]
         System.Threading.Tasks.Task MakeRequestAsync(TicketCrawler.Core.Event.EventRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ITicketCrawlerServer/ProcessResponseFromWorker")]
+        void ProcessResponseFromWorker(TicketCrawler.Core.Event.EventResponse response);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ITicketCrawlerServer/ProcessResponseFromWorker")]
+        System.Threading.Tasks.Task ProcessResponseFromWorkerAsync(TicketCrawler.Core.Event.EventResponse response);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +75,14 @@ namespace TicketCrawler.Worker.TicketCrawlerServer {
         
         public System.Threading.Tasks.Task MakeRequestAsync(TicketCrawler.Core.Event.EventRequest request) {
             return base.Channel.MakeRequestAsync(request);
+        }
+        
+        public void ProcessResponseFromWorker(TicketCrawler.Core.Event.EventResponse response) {
+            base.Channel.ProcessResponseFromWorker(response);
+        }
+        
+        public System.Threading.Tasks.Task ProcessResponseFromWorkerAsync(TicketCrawler.Core.Event.EventResponse response) {
+            return base.Channel.ProcessResponseFromWorkerAsync(response);
         }
     }
 }

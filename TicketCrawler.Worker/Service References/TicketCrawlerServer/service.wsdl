@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/TicketCrawler.Core.Event" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/TicketCrawler.Core.Model" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ITicketCrawlerServer_RegisterWorker_InputMessage">
@@ -13,12 +14,18 @@
   <wsdl:message name="ITicketCrawlerServer_MakeRequest_InputMessage">
     <wsdl:part name="parameters" element="tns:MakeRequest" />
   </wsdl:message>
+  <wsdl:message name="ITicketCrawlerServer_ProcessResponseFromWorker_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessResponseFromWorker" />
+  </wsdl:message>
   <wsdl:portType name="ITicketCrawlerServer">
     <wsdl:operation name="RegisterWorker">
       <wsdl:input wsaw:Action="http://tempuri.org/ITicketCrawlerServer/RegisterWorker" message="tns:ITicketCrawlerServer_RegisterWorker_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="MakeRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/ITicketCrawlerServer/MakeRequest" message="tns:ITicketCrawlerServer_MakeRequest_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessResponseFromWorker">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITicketCrawlerServer/ProcessResponseFromWorker" message="tns:ITicketCrawlerServer_ProcessResponseFromWorker_InputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ITicketCrawlerServer" type="tns:ITicketCrawlerServer">
@@ -31,6 +38,12 @@
     </wsdl:operation>
     <wsdl:operation name="MakeRequest">
       <soap:operation soapAction="http://tempuri.org/ITicketCrawlerServer/MakeRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessResponseFromWorker">
+      <soap:operation soapAction="http://tempuri.org/ITicketCrawlerServer/ProcessResponseFromWorker" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

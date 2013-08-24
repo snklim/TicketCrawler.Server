@@ -9,7 +9,7 @@ using System.ServiceModel.Channels;
 namespace TicketCrawler.Worker
 {
     [ServiceBehavior(InstanceContextMode=InstanceContextMode.Single)]
-    public class TicketCrawlerWorker : Core.Worker.ITicketCrawlerWorker
+    public class TicketCrawlerWorker : Core.Worker.ITicketCrawlerWorker, Core.Server.ITicketCrawlerServerCallback
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private TicketCrawlerServer.TicketCrawlerServerClient _server;
@@ -25,6 +25,14 @@ namespace TicketCrawler.Worker
             log.Info("The AssigneRequest called");
             Core.Feeder.IFeeder feeder = new Feeders.FakeFeeder();
             Task<Core.Event.EventResponse> response = feeder.GetTicketsOnEvents(request);
+            response.Result.Request = request;
+
+            _server.ProcessResponseFromWorker(response.Result);
+        }
+
+        public void ReturnResponse(Core.Event.EventResponse response)
+        {
+            throw new NotImplementedException();
         }
     }
 }

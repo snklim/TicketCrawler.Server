@@ -26,6 +26,7 @@
     <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="c4994ce6-41f5-4a9c-8388-31cc535e85cf" SourceId="1" SourceUrl="http://localhost:8733/TicketCrawlerServer/mex" />
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="e29f3d83-3ce0-4d40-8382-6356ff5806bc" SourceId="1" SourceUrl="http://localhost:8733/TicketCrawlerServer/mex" />
     <MetadataFile FileName="TicketCrawler.Core.Event.xsd" MetadataType="Schema" ID="e46e804e-a343-452b-a782-d26a200866e2" SourceId="1" SourceUrl="http://localhost:8733/TicketCrawlerServer/mex" />
+    <MetadataFile FileName="TicketCrawler.Core.Model.xsd" MetadataType="Schema" ID="061ae312-c9a2-4e18-9633-b36fbae8912a" SourceId="1" SourceUrl="http://localhost:8733/TicketCrawlerServer/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

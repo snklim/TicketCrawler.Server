@@ -1,9 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/TicketCrawler.Core.Event" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TicketCrawler.Core.Event" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/TicketCrawler.Core.Event" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TicketCrawler.Core.Event" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/TicketCrawler.Core.Model" />
   <xs:complexType name="EventRequest">
     <xs:sequence>
+      <xs:element minOccurs="0" name="RequestId" type="ser:guid" />
       <xs:element minOccurs="0" name="SearchTerm" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="EventRequest" nillable="true" type="tns:EventRequest" />
+  <xs:complexType name="EventResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RequestProcessedStatus" type="tns:EventResponse.EventRequestProcessedStatus" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TicketCrawler.Core.Model" minOccurs="0" name="TicketsOnEvents" nillable="true" type="q1:ArrayOfEvent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventResponse" nillable="true" type="tns:EventResponse" />
+  <xs:simpleType name="EventResponse.EventRequestProcessedStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="FAILURE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EventResponse.EventRequestProcessedStatus" nillable="true" type="tns:EventResponse.EventRequestProcessedStatus" />
 </xs:schema>

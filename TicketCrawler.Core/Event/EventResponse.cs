@@ -14,6 +14,8 @@ namespace TicketCrawler.Core.Event
             FAILURE
         }
 
+        public EventRequest Request { get; set; }
+
         public EventRequestProcessedStatus RequestProcessedStatus { get; set; }
         public List<Model.Event> TicketsOnEvents { get; set; }
     }

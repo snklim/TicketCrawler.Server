@@ -7,15 +7,10 @@ using System.ServiceModel;
 
 namespace TicketCrawler.Core.Worker
 {
-    [ServiceContract(CallbackContract = typeof(ITicketCrawlerWorkerCallback))]
+    [ServiceContract]
     public interface ITicketCrawlerWorker
     {
         [OperationContract(IsOneWay=true)]
         void AssigneRequest(Core.Event.EventRequest request);
-    }
-
-    public interface ITicketCrawlerWorkerCallback
-    {
-        void Response(Core.Event.EventResponse response);
     }
 }
