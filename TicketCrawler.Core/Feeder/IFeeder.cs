@@ -8,6 +8,6 @@ namespace TicketCrawler.Core.Feeder
 {
     public interface IFeeder
     {
-        Model.BatchOfTickets GetTicketsOnEvent(string searchTerm);
+        Task<Event.EventResponse> GetTicketsOnEvents(Event.EventRequest eventRequest);
     }
 }

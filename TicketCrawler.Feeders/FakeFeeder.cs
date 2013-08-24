@@ -8,49 +8,62 @@ namespace TicketCrawler.Feeders
 {
     public class FakeFeeder : TicketCrawler.Core.Feeder.IFeeder
     {
-        public Core.Model.BatchOfTickets GetTicketsOnEvent(string searchTerm)
+        public Task<Core.Event.EventResponse> GetTicketsOnEvents(Core.Event.EventRequest eventRequest)
         {
-            Core.Model.BatchOfTickets batch = new Core.Model.BatchOfTickets(
-                new Core.Model.Event { EventId = Guid.NewGuid(), DateOfEvent = DateTime.Now },
-                new Core.Model.Location { LocationId = Guid.NewGuid(), Name = "Wilson Theatre", State = "US", Town = "New York" },
-                new List<Core.Model.Ticket>{
-                    new Core.Model.Ticket
-                    { 
-                        TicketId = Guid.NewGuid(),
-                        Sector = "Orchestra Rear Sides M-ZZ",
-                        Row = "Row Z  |  Seats Guaranteed together",
-                        Price = "127.99"
-                    },
-                    new Core.Model.Ticket
-                    { 
-                        TicketId = Guid.NewGuid(),
-                        Sector = "Orchestra Rear Sides M-ZZ",
-                        Row = "Row Z  |  Seats Guaranteed together",
-                        Price = "127.99"
-                    },
-                    new Core.Model.Ticket
-                    { 
-                        TicketId = Guid.NewGuid(),
-                        Sector = "Orchestra Rear Sides M-ZZ",
-                        Row = "Row Z  |  Seats Guaranteed together",
-                        Price = "127.99"
-                    },
-                    new Core.Model.Ticket
-                    { 
-                        TicketId = Guid.NewGuid(),
-                        Sector = "Orchestra Rear Sides M-ZZ",
-                        Row = "Row Z  |  Seats Guaranteed together",
-                        Price = "127.99"
-                    },
-                    new Core.Model.Ticket
-                    { 
-                        TicketId = Guid.NewGuid(),
-                        Sector = "Orchestra Rear Sides M-ZZ",
-                        Row = "Row Z  |  Seats Guaranteed together",
-                        Price = "127.99"
+            TaskCompletionSource<Core.Event.EventResponse> tcs = new TaskCompletionSource<Core.Event.EventResponse>();
+
+            tcs.SetResult(new Core.Event.EventResponse
+            {
+                RequestProcessedStatus = Core.Event.EventResponse.EventRequestProcessedStatus.SUCCESS,
+                TicketsOnEvents = new List<Core.Model.Event>
+                {
+                    new Core.Model.Event
+                    {
+                        DateOfEvent = DateTime.Now,
+                        Location = new Core.Model.Location
+                        {
+                            Name = "Wilson Theatre",
+                            State = "US",
+                            Town = "New York"
+                        },
+                        Tickets = new List<Core.Model.Ticket>
+                        {
+                            new Core.Model.Ticket
+                            {
+                                Sector = "Orchestra Rear Sides M-ZZ",
+                                Row = "Row Z  |  Seats Guaranteed together",
+                                Price = "127.99"
+                            },
+                            new Core.Model.Ticket
+                            {
+                                Sector = "Orchestra Rear Sides M-ZZ",
+                                Row = "Row Z  |  Seats Guaranteed together",
+                                Price = "127.99"
+                            },
+                            new Core.Model.Ticket
+                            {
+                                Sector = "Orchestra Rear Sides M-ZZ",
+                                Row = "Row Z  |  Seats Guaranteed together",
+                                Price = "127.99"
+                            },
+                            new Core.Model.Ticket
+                            {
+                                Sector = "Orchestra Rear Sides M-ZZ",
+                                Row = "Row Z  |  Seats Guaranteed together",
+                                Price = "127.99"
+                            },
+                            new Core.Model.Ticket
+                            {
+                                Sector = "Orchestra Rear Sides M-ZZ",
+                                Row = "Row Z  |  Seats Guaranteed together",
+                                Price = "127.99"
+                            }
+                        }
                     }
-                });
-            return batch;
+                }
+            });
+
+            return tcs.Task;
         }
     }
 }

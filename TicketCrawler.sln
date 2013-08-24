@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketCrawler.Server", "TicketCrawler.Server\TicketCrawler.Server.csproj", "{15B3E0D2-6217-493A-A690-158C497F5318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketCrawler.Worker", "TicketCrawler.Worker\TicketCrawler.Worker.csproj", "{05EE47EA-7398-412B-91F2-D828195CFE43}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketCrawler.Client", "TicketCrawler.Client\TicketCrawler.Client.csproj", "{132D8F5E-C77A-429E-8FD5-749364ADC512}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketCrawler.Core", "TicketCrawler.Core\TicketCrawler.Core.csproj", "{CC3FC402-0F42-4C2F-860F-1AE0D29F8127}"
@@ -14,6 +12,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketCrawler.DataBase", "TicketCrawler.DataBase\TicketCrawler.DataBase.csproj", "{D30B92C6-DF42-4823-8526-6355EFEB6FD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketCrawler.Feeders", "TicketCrawler.Feeders\TicketCrawler.Feeders.csproj", "{76B0E623-D787-4ED6-B851-61E3A3CBD6BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketCrawler.Worker", "TicketCrawler.Worker\TicketCrawler.Worker.csproj", "{97AB6D6A-A8A1-427F-8180-EC28D2E92EE3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +28,6 @@ Global
 		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.Build.0 = Release|Any CPU
-		{05EE47EA-7398-412B-91F2-D828195CFE43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05EE47EA-7398-412B-91F2-D828195CFE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05EE47EA-7398-412B-91F2-D828195CFE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05EE47EA-7398-412B-91F2-D828195CFE43}.Release|Any CPU.Build.0 = Release|Any CPU
 		{132D8F5E-C77A-429E-8FD5-749364ADC512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{132D8F5E-C77A-429E-8FD5-749364ADC512}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{132D8F5E-C77A-429E-8FD5-749364ADC512}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,6 +48,10 @@ Global
 		{76B0E623-D787-4ED6-B851-61E3A3CBD6BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76B0E623-D787-4ED6-B851-61E3A3CBD6BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76B0E623-D787-4ED6-B851-61E3A3CBD6BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97AB6D6A-A8A1-427F-8180-EC28D2E92EE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97AB6D6A-A8A1-427F-8180-EC28D2E92EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97AB6D6A-A8A1-427F-8180-EC28D2E92EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97AB6D6A-A8A1-427F-8180-EC28D2E92EE3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

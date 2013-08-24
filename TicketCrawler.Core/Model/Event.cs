@@ -10,5 +10,8 @@ namespace TicketCrawler.Core.Model
     {
         public Guid EventId { get; set; }
         public DateTime DateOfEvent { get; set; }
+
+        public List<Ticket> Tickets { get; set; }
+        public Location Location { get; set; }
     }
 }

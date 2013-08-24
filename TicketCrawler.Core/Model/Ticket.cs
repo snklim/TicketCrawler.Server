@@ -12,5 +12,7 @@ namespace TicketCrawler.Core.Model
         public string Sector { get; set; }
         public string Row { get; set; }
         public string Price { get; set; }
+        
+        public Event Event { get; set; }
     }
 }
