@@ -12,7 +12,7 @@ namespace TicketCrawler.Worker.TicketCrawlerServer {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TicketCrawlerServer.ITicketCrawlerServer")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TicketCrawlerServer.ITicketCrawlerServer", CallbackContract=typeof(TicketCrawler.Worker.TicketCrawlerServer.ITicketCrawlerServerCallback))]
     public interface ITicketCrawlerServer {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ITicketCrawlerServer/RegisterWorker")]
@@ -35,30 +35,38 @@ namespace TicketCrawler.Worker.TicketCrawlerServer {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface ITicketCrawlerServerCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ITicketCrawlerServer/ReturnResponse")]
+        void ReturnResponse(TicketCrawler.Core.Event.EventResponse response);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ITicketCrawlerServerChannel : TicketCrawler.Worker.TicketCrawlerServer.ITicketCrawlerServer, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TicketCrawlerServerClient : System.ServiceModel.ClientBase<TicketCrawler.Worker.TicketCrawlerServer.ITicketCrawlerServer>, TicketCrawler.Worker.TicketCrawlerServer.ITicketCrawlerServer {
+    public partial class TicketCrawlerServerClient : System.ServiceModel.DuplexClientBase<TicketCrawler.Worker.TicketCrawlerServer.ITicketCrawlerServer>, TicketCrawler.Worker.TicketCrawlerServer.ITicketCrawlerServer {
         
-        public TicketCrawlerServerClient() {
+        public TicketCrawlerServerClient(System.ServiceModel.InstanceContext callbackInstance) : 
+                base(callbackInstance) {
         }
         
-        public TicketCrawlerServerClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+        public TicketCrawlerServerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName) : 
+                base(callbackInstance, endpointConfigurationName) {
         }
         
-        public TicketCrawlerServerClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public TicketCrawlerServerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, string remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public TicketCrawlerServerClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+        public TicketCrawlerServerClient(System.ServiceModel.InstanceContext callbackInstance, string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, endpointConfigurationName, remoteAddress) {
         }
         
-        public TicketCrawlerServerClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+        public TicketCrawlerServerClient(System.ServiceModel.InstanceContext callbackInstance, System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(callbackInstance, binding, remoteAddress) {
         }
         
         public void RegisterWorker(string workerEndpointUrl) {

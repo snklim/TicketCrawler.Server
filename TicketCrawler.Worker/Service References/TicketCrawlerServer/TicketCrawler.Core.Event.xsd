@@ -11,6 +11,7 @@
   <xs:element name="EventRequest" nillable="true" type="tns:EventRequest" />
   <xs:complexType name="EventResponse">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Request" nillable="true" type="tns:EventRequest" />
       <xs:element minOccurs="0" name="RequestProcessedStatus" type="tns:EventResponse.EventRequestProcessedStatus" />
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TicketCrawler.Core.Model" minOccurs="0" name="TicketsOnEvents" nillable="true" type="q1:ArrayOfEvent" />
     </xs:sequence>
