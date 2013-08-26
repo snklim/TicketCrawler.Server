@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketCrawler.Server", "TicketCrawler.Server\TicketCrawler.Server.csproj", "{15B3E0D2-6217-493A-A690-158C497F5318}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketCrawler.Client", "TicketCrawler.Client\TicketCrawler.Client.csproj", "{132D8F5E-C77A-429E-8FD5-749364ADC512}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketCrawler.Core", "TicketCrawler.Core\TicketCrawler.Core.csproj", "{CC3FC402-0F42-4C2F-860F-1AE0D29F8127}"
 EndProject

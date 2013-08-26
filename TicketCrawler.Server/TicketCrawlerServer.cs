@@ -42,6 +42,7 @@ namespace TicketCrawler.Server
         {
             if (response.RequestProcessedStatus == Core.Event.EventResponse.EventRequestProcessedStatus.SUCCESS)
             {
+                Callback.ReturnResponse(response);
             }
             else
             {
@@ -57,6 +58,14 @@ namespace TicketCrawler.Server
                 var worker = taskRequest.Workers[0];
                 worker.AssigneRequest(taskRequest.Request);
                 taskRequest.Workers.RemoveAt(0);
+            }
+        }
+
+        private Core.Server.ITicketCrawlerServerCallback Callback
+        {
+            get
+            {
+                return OperationContext.Current.GetCallbackChannel<Core.Server.ITicketCrawlerServerCallback>();
             }
         }
     }

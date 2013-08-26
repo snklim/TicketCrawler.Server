@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aa606dc2-2db6-4a92-9c22-b5fe46684e3a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/TicketCrawlerServer/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="42dbb7c9-39fe-44c7-ad63-80ce2b1d25cc" SourceId="1" SourceUrl="http://localhost:8733/TicketCrawlerServer/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="780c18b0-82c2-4396-ac2b-3537a59d25d1" SourceId="1" SourceUrl="http://localhost:8733/TicketCrawlerServer/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="5bbd0549-934f-47ce-a369-32ffb1de930c" SourceId="1" SourceUrl="http://localhost:8733/TicketCrawlerServer/mex" />
+    <MetadataFile FileName="TicketCrawler.Core.Event.xsd" MetadataType="Schema" ID="13840e8b-2073-48ad-907f-b0433e822f8d" SourceId="1" SourceUrl="http://localhost:8733/TicketCrawlerServer/mex" />
+    <MetadataFile FileName="TicketCrawler.Core.Model.xsd" MetadataType="Schema" ID="5d5f1b49-9fc1-4d49-87b8-cef99f57e4e2" SourceId="1" SourceUrl="http://localhost:8733/TicketCrawlerServer/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

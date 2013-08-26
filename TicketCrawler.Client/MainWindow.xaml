@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Button Content="Do Search" HorizontalAlignment="Left" Margin="320,127,0,0" VerticalAlignment="Top" Width="75" Click="Button_DoSearch"/>
+        <TextBox Name="tbDoSearch" HorizontalAlignment="Left" Height="23" Margin="52,127,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="187"/>
+
     </Grid>
 </Window>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ServiceModel;
 
 namespace TicketCrawler.Client
 {
@@ -23,6 +24,20 @@ namespace TicketCrawler.Client
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_DoSearch(object sender, RoutedEventArgs e)
+        {
+            var server = new TicketCrawlerServer.TicketCrawlerServerClient(new InstanceContext(new TicketCrawlerServerCallback()));
+            server.MakeRequest(new Core.Event.EventRequest { RequestId = Guid.NewGuid(), SearchTerm = tbDoSearch.Text });
+        }
+    }
+
+    public class TicketCrawlerServerCallback : TicketCrawlerServer.ITicketCrawlerServerCallback
+    {
+        public void ReturnResponse(Core.Event.EventResponse response)
+        {
+            
         }
     }
 }

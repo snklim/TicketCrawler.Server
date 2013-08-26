@@ -25,9 +25,11 @@ namespace TicketCrawler.Worker
             log.Info("The AssigneRequest called");
             Core.Feeder.IFeeder feeder = new Feeders.FakeFeeder();
             Task<Core.Event.EventResponse> response = feeder.GetTicketsOnEvents(request);
-            response.Result.Request = request;
 
-            _server.ProcessResponseFromWorker(response.Result);
+            response.Result.Request = request;
+            response.Result.RequestProcessedStatus = Core.Event.EventResponse.EventRequestProcessedStatus.SUCCESS;
+
+            new TicketCrawlerServer.TicketCrawlerServerClient(new InstanceContext(new TicketCrawlerServerCallback())).ProcessResponseFromWorker(response.Result);
         }
     }
 
@@ -35,7 +37,7 @@ namespace TicketCrawler.Worker
     {
         public void ReturnResponse(Core.Event.EventResponse response)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }
