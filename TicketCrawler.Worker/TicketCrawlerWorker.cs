@@ -31,11 +31,11 @@ namespace TicketCrawler.Worker
         }
     }
 
-    public class TicketCrawlerServerCallback : Core.Server.ITicketCrawlerServerCallback
+    public class TicketCrawlerServerCallback : TicketCrawler.Worker.TicketCrawlerServer.ITicketCrawlerServerCallback
     {
         public void ReturnResponse(Core.Event.EventResponse response)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

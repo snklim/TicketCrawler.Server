@@ -7,7 +7,7 @@ using System.ServiceModel;
 
 namespace TicketCrawler.Core.Server
 {
-    [ServiceContract(CallbackContract = typeof(ITicketCrawlerServerCallback))]
+    [ServiceContract(CallbackContract = typeof(ITicketCrawlerServerCallback), SessionMode=SessionMode.Required)]
     public interface ITicketCrawlerServer
     {
         [OperationContract(IsOneWay = true)]

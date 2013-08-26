@@ -12,7 +12,7 @@ namespace TicketCrawler.Worker.TicketCrawlerServer {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TicketCrawlerServer.ITicketCrawlerServer", CallbackContract=typeof(TicketCrawler.Worker.TicketCrawlerServer.ITicketCrawlerServerCallback))]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="TicketCrawlerServer.ITicketCrawlerServer", CallbackContract=typeof(TicketCrawler.Worker.TicketCrawlerServer.ITicketCrawlerServerCallback), SessionMode=System.ServiceModel.SessionMode.Required)]
     public interface ITicketCrawlerServer {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ITicketCrawlerServer/RegisterWorker")]

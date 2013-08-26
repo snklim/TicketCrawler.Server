@@ -215,17 +215,17 @@
   <wsdl:message name="ITicketCrawlerServer_ReturnResponse_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:ReturnResponse" />
   </wsdl:message>
-  <wsdl:portType name="ITicketCrawlerServer">
-    <wsdl:operation name="RegisterWorker">
+  <wsdl:portType msc:usingSession="true" name="ITicketCrawlerServer">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RegisterWorker">
       <wsdl:input wsaw:Action="http://tempuri.org/ITicketCrawlerServer/RegisterWorker" message="tns:ITicketCrawlerServer_RegisterWorker_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="MakeRequest">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MakeRequest">
       <wsdl:input wsaw:Action="http://tempuri.org/ITicketCrawlerServer/MakeRequest" message="tns:ITicketCrawlerServer_MakeRequest_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ProcessResponseFromWorker">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ProcessResponseFromWorker">
       <wsdl:input wsaw:Action="http://tempuri.org/ITicketCrawlerServer/ProcessResponseFromWorker" message="tns:ITicketCrawlerServer_ProcessResponseFromWorker_InputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ReturnResponse">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReturnResponse">
       <wsdl:output wsaw:Action="http://tempuri.org/ITicketCrawlerServer/ReturnResponse" message="tns:ITicketCrawlerServer_ReturnResponse_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
